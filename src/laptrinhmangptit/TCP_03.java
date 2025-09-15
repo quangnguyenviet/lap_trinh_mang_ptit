@@ -6,50 +6,37 @@ package laptrinhmangptit;
 
 import java.net.*;
 import java.io.*;
+import java.util.*;
 
 public class TCP_03 {
-    static boolean isPrime(long n){
-        if (n<2) return false;
-        for(int i=2;i<=Math.sqrt(n);i++){
-            if(n%i==0) return false;
-        }
-        return true;
-    }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         String studentCode = "B22DCCN650";
-        String qCode = "lkVQyNbu";
+        String qCode = "N3M9lGvZ";
         String message = studentCode + ";" + qCode;
-        Socket sk = null;
-        InputStream in = null;
-        OutputStream out = null;
-        try {
-            sk = new Socket("203.162.10.109", 2206);
-            in = sk.getInputStream();
-            out = sk.getOutputStream();
-            out.write(message.getBytes());
-            out.flush();
-            byte[] bs = new byte[1024];
-            int len = in.read(bs);
-            String s = new String(bs, 0, len);
-//            System.out.println(s);
-            Long res = 0l;
-            String[] words = s.trim().split(",");
-            for(String w : words){
-                Long num = Long.parseLong(w);
-                if(isPrime(num)){
-                    res += num;
-                }
-            }
-            out.write(res.toString().getBytes());
-//            System.out.println(res);
-            out.flush();
-            sk.close();
-            in.close();
-            out.close();
-        } catch (IOException ex) {
-//            System.getLogger(TCP_03.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-        }
+        String host = "203.162.10.109";
+        int port = 2207;
+        Socket sk = new Socket(host, port);
+        DataInputStream in = new DataInputStream(sk.getInputStream());
+        DataOutputStream out = new DataOutputStream(sk.getOutputStream());
+        out.writeUTF(message);
+        out.flush();
+        
+        int a = in.readInt();
+        int b = in.readInt();
+        System.out.println(a);
+        System.out.println(b);
+        int sum = a + b;
+        int product =a * b;
+        System.out.println(product);
+        
+        out.writeInt(sum);
+        out.writeInt(product);
+        out.flush();
+        
+        sk.close();
+        in.close();
+        out.close();
 
     }
 }
