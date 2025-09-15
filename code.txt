@@ -1,0 +1,127 @@
+[Mã câu hỏi (qCode): a4UY7rKu].  Một chương trình server cho phép kết nối qua giao thức TCP tại cổng 2208 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5s). Yêu cầu là xây dựng một chương trình client tương tác với server sử dụng các luồng byte (BufferedWriter/BufferedReader) theo kịch bản sau: 
+a.	Gửi một chuỗi gồm mã sinh viên và mã câu hỏi với định dạng "studentCode;qCode". Ví dụ: "B15DCCN999;EC4F899B"
+b.	Nhận một chuỗi ngẫu nhiên là danh sách các một số tên miền từ server
+Ví dụ: giHgWHwkLf0Rd0.io, I7jpjuRw13D.io, wXf6GP3KP.vn, MdpIzhxDVtTFTF.edu, TUHuMfn25chmw.vn, HHjE9.com, 4hJld2m2yiweto.vn, y2L4SQwH.vn, s2aUrZGdzS.com, 4hXfJe9giAA.edu
+c.	Tìm kiếm các tên miền .edu và gửi lên server
+Ví dụ: MdpIzhxDVtTFTF.edu, 4hXfJe9giAA.edu
+d.	Đóng kết nối và kết thúc chương trình.
+
+[Mã câu hỏi (qCode): cchKeSPP].  Một chương trình server hỗ trợ kết nối qua giao thức TCP tại cổng 2206 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5s). 
+Yêu cầu xây dựng chương trình client thực hiện kết nối tới server trên sử dụng luồng byte dữ liệu (InputStream/OutputStream) để trao đổi thông tin theo thứ tự: 
+a.	Gửi mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCode". Ví dụ: "B16DCCN999;C64967DD"
+b.	Nhận dữ liệu từ server là một chuỗi gồm các giá trị nguyên được phân tách với nhau bằng  "|"
+Ex: 2|5|9|11
+c.	Thực hiện tìm giá trị tổng của các số nguyên trong chuỗi và gửi lên server
+Ex: 27
+d.	Đóng kết nối và kết thúc
+
+[Mã câu hỏi (qCode): N3M9lGvZ].  Một chương trình máy chủ cho phép kết nối qua TCP tại cổng 2207 (hỗ trợ thời gian liên lạc tối đa cho mỗi yêu cầu là 5s), yêu cầu xây dựng chương trình (tạm gọi là client) thực hiện kết nối tới server tại cổng 2207, sử dụng luồng byte dữ liệu (DataInputStream/DataOutputStream) để trao đổi thông tin theo thứ tự: 
+a.	Gửi chuỗi là mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCode". Ví dụ: "B15DCCN999;1D25ED92"
+b.	Nhận lần lượt hai số nguyên a và b từ server
+c.	Thực hiện tính toán tổng, tích và gửi lần lượt từng giá trị theo đúng thứ tự trên lên server
+d.	Đóng kết nối và kết thúc
+
+[Mã câu hỏi (qCode): lkVQyNbu].  Một chương trình server hỗ trợ kết nối qua giao thức TCP tại cổng 2206 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5s). Yêu cầu xây dựng chương trình client thực hiện kết nối tới server sử dụng luồng byte dữ liệu (InputStream/OutputStream) để trao đổi thông tin theo thứ tự:
+a. Gửi mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCode".
+Ví dụ: "B16DCCN999;C89DAB45"
+b. Nhận dữ liệu từ server là một chuỗi các số nguyên được phân tách bởi ký tự ",".
+Ví dụ: "8,4,2,10,5,6,1,3"
+c. Tính tổng của tất cả các số nguyên tố trong chuỗi và gửi kết quả lên server.
+Ví dụ: Với dãy "8,4,2,10,5,6,1,3", các số nguyên tố là 2, 5, 3, tổng là 10. Gửi lên server chuỗi "10".
+d. Đóng kết nối và kết thúc chương trình.
+
+[Mã câu hỏi (qCode): aGcxmGS4].  Một chương trình server cho phép kết nối qua giao thức TCP tại cổng 2209 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5 giây). Yêu cầu là xây dựng một chương trình client tương tác với server sử dụng các luồng đối tượng (ObjectOutputStream/ObjectInputStream) theo kịch bản dưới đây:
+
+Biết lớp TCP.Product gồm các thuộc tính (id int, name String, price double, int discount) và private static final long serialVersionUID = 20231107;
+
+a. Gửi đối tượng là một chuỗi gồm mã sinh viên và mã câu hỏi với định dạng "studentCode;qCode". Ví dụ: "B15DCCN999;1E08CA31"
+
+b. Nhận một đối tượng là thể hiện của lớp TCP.Product từ server.
+
+c. Tính toán giá trị giảm giá theo price theo nguyên tắc: Giá trị giảm giá (discount) bằng tổng các chữ số trong phần nguyên của giá sản phẩm (price). Thực hiện gán giá trị cho thuộc tính discount và gửi lên đối tượng nhận được lên server.
+
+d. Đóng kết nối và kết thúc chương trình.
+
+[Mã câu hỏi (qCode): bOdvmYnv].  Một chương trình server cho phép kết nối qua TCP tại cổng 2207 (hỗ trợ thời gian liên lạc tối đa cho mỗi yêu cầu là 5 giây). Yêu cầu xây dựng chương trình client thực hiện giao tiếp với server sử dụng luồng data (DataInputStream/DataOutputStream) để trao đổi thông tin theo thứ tự:
+a. Gửi mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCode".
+Ví dụ: "B10DCCN003;C6D7E8F9"
+b. Nhận lần lượt:
+•	Một số nguyên k là độ dài đoạn.
+•	Chuỗi chứa mảng số nguyên, các phần tử được phân tách bởi dấu phẩy ",".
+Ví dụ: Nhận k = 3 và "1,2,3,4,5,6,7,8".
+c. Thực hiện chia mảng thành các đoạn có độ dài k và đảo ngược mỗi đoạn, sau đó gửi mảng đã xử lý lên server. Ví dụ: Với k = 3 và mảng "1,2,3,4,5,6,7,8", kết quả là "3,2,1,6,5,4,8,7". Gửi chuỗi kết quả "3,2,1,6,5,4,8,7" lên server.
+d. Đóng kết nối và kết thúc chương trình
+
+
+
+[Mã câu hỏi (qCode): 6eeMrLYi].  Một chương trình server cho phép kết nối qua giao thức TCP tại cổng 2208 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5 giây). Yêu cầu là xây dựng một chương trình client tương tác với server sử dụng các luồng ký tự (BufferedReader/BufferedWriter) theo kịch bản sau:
+
+a. Gửi một chuỗi chứa mã sinh viên và mã câu hỏi với định dạng "studentCode;qCode". Ví dụ: "B15DCCN999;C1234567"
+
+b. Nhận từ server một chuỗi chứa nhiều từ, các từ được phân tách bởi khoảng trắng. Ví dụ: "hello world this is a test example"
+
+c. Sắp xếp các từ trong chuỗi theo độ dài, thứ tự xuất hiện. Gửi danh sách các từ theo từng nhóm về server theo định dạng: "a, is, this, test, hello, world, example".
+
+d. Đóng kết nối và kết thúc chương trình.
+
+
+
+
+[Mã câu hỏi (qCode): UuGk9nOB].  Một chương trình server cho phép kết nối qua giao thức TCP tại cổng 2208 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5 giây). Yêu cầu là xây dựng một chương trình client tương tác với server sử dụng các luồng ký tự (BufferedReader/BufferedWriter) theo kịch bản sau:
+a. Gửi một chuỗi chứa mã sinh viên và mã câu hỏi với định dạng "studentCode;qCode".
+Ví dụ: "B15DCCN999;1D08FX21"
+b. Nhận từ server một chuỗi chứa nhiều từ, các từ được phân tách bởi khoảng trắng.
+Ví dụ: "hello world programming is fun"
+c. Thực hiện đảo ngược từ và mã hóa RLE để nén chuỗi ("aabb" nén thành "a2b2"). Gửi chuỗi đã được xử lý lên server. Ví dụ: "ol2eh dlrow gnim2argorp si nuf".
+d. Đóng kết nối và kết thúc chương trình
+
+
+[Mã câu hỏi (qCode): qC6ikvIO].  Một chương trình server cho phép kết nối qua giao thức TCP tại cổng 2209 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5 giây). Yêu cầu là xây dựng một chương trình client tương tác với server sử dụng các luồng đối tượng (ObjectOutputStream/ObjectInputStream) để gửi/nhận và chuẩn hóa thông tin địa chỉ của khách hàng.
+Biết rằng lớp TCP.Address có các thuộc tính (id int, code String, addressLine String, city String, postalCode String) và trường dữ liệu private static final long serialVersionUID = 20180801L.
+a. Gửi đối tượng là một chuỗi gồm mã sinh viên và mã câu hỏi với định dạng "studentCode;qCode". Ví dụ: "B15DCCN999;A1B2C3D4"
+b. Nhận một đối tượng là thể hiện của lớp TCP.Address từ server. Thực hiện chuẩn hóa thông tin addressLine bằng cách:
+•	Chuẩn hóa addressLine: Viết hoa chữ cái đầu mỗi từ, in thường các chữ còn lại, loại bỏ ký tự đặc biệt và khoảng trắng thừa (ví dụ: "123 nguyen!!! van cu" → "123 Nguyen Van Cu") 
+•	Chuẩn hóa postalCode: Chỉ giữ lại số và ký tự "-" ví dụ: "123-456"
+c. Gửi đối tượng đã được chuẩn hóa thông tin địa chỉ lên server.
+d. Đóng kết nối và kết thúc chương trình.
+
+
+
+[Mã câu hỏi (qCode): dZHJnt0R].  Một chương trình server hỗ trợ kết nối qua giao thức TCP tại cổng 2206 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5s). Yêu cầu xây dựng chương trình client thực hiện kết nối tới server sử dụng luồng byte dữ liệu (InputStream/OutputStream) để trao đổi thông tin theo thứ tự:
+a. Gửi mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCode".
+Ví dụ: "B16DCCN999;D45EFA12"
+b. Nhận dữ liệu từ server là một chuỗi các số nguyên được phân tách bởi ký tự ",".
+Ví dụ: "10,5,15,20,25,30,35"
+c. Xác định hai số trong dãy có tổng gần nhất với gấp đôi giá trị trung bình của toàn bộ dãy. Gửi thông điệp lên server theo định dạng "num1,num2" (với num1 < num2)
+Ví dụ: Với dãy "10,5,15,20,25,30,35", gấp đôi giá trị trung bình là 40, hai số có tổng gần nhất là 15 và 25. Gửi lên server chuỗi "15,25".
+d. Đóng kết nối và kết thúc chương trình.
+
+
+
+[Mã câu hỏi (qCode): OoeBsXOw].  Một chương trình server hỗ trợ kết nối qua giao thức TCP tại cổng 2206 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5s). Yêu cầu xây dựng chương trình client thực hiện kết nối tới server sử dụng luồng byte dữ liệu (InputStream/OutputStream) để trao đổi thông tin theo thứ tự:
+a. Gửi mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCode".
+Ví dụ: "B16DCCN999;D45EFA12"
+b. Nhận dữ liệu từ server là một chuỗi các số nguyên được phân tách bởi ký tự ",".
+Ví dụ: "10,5,15,20,25,30,35"
+c. Xác định hai số trong dãy có tổng gần nhất với gấp đôi giá trị trung bình của toàn bộ dãy. Gửi thông điệp lên server theo định dạng "num1,num2" (với num1 < num2)
+Ví dụ: Với dãy "10,5,15,20,25,30,35", gấp đôi giá trị trung bình là 40, hai số có tổng gần nhất là 15 và 25. Gửi lên server chuỗi "15,25".
+d. Đóng kết nối và kết thúc chương trình.
+
+
+[Mã câu hỏi (qCode): WePfBLda].  Một chương trình server cho phép kết nối qua TCP tại cổng 2207 (hỗ trợ thời gian liên lạc tối đa cho mỗi yêu cầu là 5 giây). Yêu cầu xây dựng chương trình client thực hiện giao tiếp với server sử dụng luồng data (DataInputStream/DataOutputStream) để trao đổi thông tin theo thứ tự:
+a. Gửi mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCode".
+Ví dụ: "B10DCCN001;A1B2C3D4"
+b. Nhận một số nguyên hệ thập phân từ server. Ví dụ: 255
+c. Chuyển đổi số nguyên nhận được sang hai hệ cơ số 8 và 16. Gửi lần lượt chuỗi kết quả lên server. Ví dụ: Với số 255 hệ thập phân, kết quả gửi lên sẽ là hai chuỗi "377" và "FF".
+d. Đóng kết nối và kết thúc chương trình.
+
+
+[Mã câu hỏi (qCode): mSxj2jJk].  Một chương trình server cho phép kết nối qua TCP tại cổng 2207 (hỗ trợ thời gian liên lạc tối đa cho mỗi yêu cầu là 5 giây). Yêu cầu xây dựng chương trình client thực hiện giao tiếp với server sử dụng luồng data (DataInputStream/DataOutputStream) để trao đổi thông tin theo thứ tự:
+a. Gửi mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCode".
+Ví dụ: "B10DCCN002;B4C5D6E7"
+b. Nhận chuỗi chứa mảng số nguyên từ server, các phần tử được phân tách bởi dấu phẩy ",". Ví dụ: "1,3,2,5,4,7,6"
+c. Tính số lần đổi chiều và tổng độ biến thiên trong dãy số.
+- Đổi chiều: Khi dãy chuyển từ tăng sang giảm hoặc từ giảm sang tăng 
+-   Độ biến thiên: Tổng giá trị tuyệt đối của các hiệu số liên tiếp
+Gửi lần lượt lên server: số nguyên đại diện cho số lần đổi chiều, sau đó là số nguyên đại diện cho tổng độ biến thiên. Ví dụ: Với mảng "1,3,2,5,4,7,6", số lần đổi chiều: 5 lần, Tổng độ biến thiên 11 -> Gửi lần lượt số nguyên 5 và 11 lên server.
+d. Đóng kết nối và kết thúc chương trình.
