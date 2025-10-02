@@ -10,7 +10,7 @@ package UDP_LIST;
  */
 import java.net.*;
 import java.util.*;
-import java.io.*:
+import java.io.*;
 
 public class UDP1 {
     public static void main(String[] args) throws Exception {
