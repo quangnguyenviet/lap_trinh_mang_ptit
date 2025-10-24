@@ -2,19 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package laptrinhmangptit;
+package TCP_LIst;
 
-/**
- *
- * @author nvqua
- */
-import java.util.*;
-import java.io.*;
 import java.net.*;
-public class TCP_09 {
+import java.io.*;
+import java.util.*;
+
+public class TCP_03 {
+
     public static void main(String[] args) throws Exception {
         String studentCode = "B22DCCN650";
-        String qCode = "WePfBLda";
+        String qCode = "N3M9lGvZ";
         String message = studentCode + ";" + qCode;
         String host = "203.162.10.109";
         int port = 2207;
@@ -23,21 +21,22 @@ public class TCP_09 {
         DataOutputStream out = new DataOutputStream(sk.getOutputStream());
         out.writeUTF(message);
         out.flush();
-        int num = in.readInt();
-        System.out.println(num);
-        String oct = Integer.toOctalString(num);
-        String hex = Integer.toHexString(num).toUpperCase();
-        System.out.println(oct);
-        System.out.println(hex);
-        String response = String.join(";", Arrays.asList(oct, hex));
-        out.writeUTF(response);
-//        out.writeUTF("\n");
-//        out.flush();
-//        out.writeUTF(hex);
+        
+        int a = in.readInt();
+        int b = in.readInt();
+        System.out.println(a);
+        System.out.println(b);
+        int sum = a + b;
+        int product =a * b;
+        System.out.println(product);
+        
+        out.writeInt(sum);
+        out.writeInt(product);
         out.flush();
         
+        sk.close();
         in.close();
         out.close();
-        sk.close();
+
     }
 }

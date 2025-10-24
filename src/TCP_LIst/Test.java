@@ -2,41 +2,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package laptrinhmangptit;
+package TCP_LIst;
 
-import java.net.*;
-import java.io.*;
+/**
+ *
+ * @author nvqua
+ */
 import java.util.*;
-
-public class TCP_03 {
-
+import java.io.*;
+import java.net.*;
+public class Test {
     public static void main(String[] args) throws Exception {
-        String studentCode = "B22DCCN650";
-        String qCode = "N3M9lGvZ";
-        String message = studentCode + ";" + qCode;
         String host = "203.162.10.109";
         int port = 2207;
+        String ms1 = "B22DCCN650;NfBtDLTj";
         Socket sk = new Socket(host, port);
         DataInputStream in = new DataInputStream(sk.getInputStream());
         DataOutputStream out = new DataOutputStream(sk.getOutputStream());
-        out.writeUTF(message);
+        out.writeUTF(ms1);
         out.flush();
         
-        int a = in.readInt();
-        int b = in.readInt();
-        System.out.println(a);
-        System.out.println(b);
-        int sum = a + b;
-        int product =a * b;
-        System.out.println(product);
+        Integer n = in.readInt();
+        System.out.println(n);
         
-        out.writeInt(sum);
-        out.writeInt(product);
+        String ms2 = Integer.toBinaryString(n);
+        out.writeUTF(ms2);
         out.flush();
         
-        sk.close();
-        in.close();
         out.close();
-
+        in.close();
+        sk.close();
     }
+    
+    
 }
