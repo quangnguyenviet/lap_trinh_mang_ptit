@@ -9,36 +9,33 @@ package RMI;
  * @author nvqua
  */
 import java.io.*;
-import java.util.*;
 import java.rmi.*;
 import java.rmi.registry.*;
+import java.util.*;
 public class Main {
-    public static void main(String[] args) throws Exception {
-        String qCode = "Egzqxd8e";
-        String studentCode = "B22DCCN650";
+    public static void main(String[] args) throws Exception{
         String host = "203.162.10.109";
         int port = 1099;
-        Registry registry = LocateRegistry.getRegistry(host, port);
-        ObjectService objectService = (ObjectService) registry.lookup("RMIObjectService");
-        ProductX productX = (ProductX) objectService.requestObject(studentCode, qCode);
-        System.out.println(productX);
-        productX.discount = sumDigit(productX.discountCode);
-        objectService.submitObject(studentCode, qCode, productX);
-        System.out.println(productX);
-        
+        String studentCode = "B22DCCN650";
+        String qCode = "1aYah8GD";
+        Registry rg = LocateRegistry.getRegistry(host, port);
+        ByteService bs = (ByteService)rg.lookup("RMIByteService");
+        String s = new String(bs.requestData(studentCode, qCode));
+        String res = solve(s);
+        bs.submitData(studentCode, qCode, res.getBytes());
     }
-    public static int sumDigit(String s){
+    public static String solve(String s){
+        String key = "PTIT";
+        int idx = 0;
         int len = s.length();
-        int sum = 0;
+        String res = "";
         for(int i=0;i<len;i++){
-            try{
-                int digit = Integer.valueOf(s.charAt(i) + "");
-                sum+= digit;
-            }
-            catch(Exception e){
-                continue;
-            }
+            char c = s.charAt(i);
+            char d = key.charAt(idx%4);
+            char e = (char) (c ^ d );
+            res += e + "";
+            idx++;
         }
-        return sum;
+        return res;
     }
 }
